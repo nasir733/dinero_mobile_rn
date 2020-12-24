@@ -15,8 +15,9 @@ import { GettingEstablished } from './GettingEstablished';
 export class BusinessCreditChecklist extends Component {
     markEstablished = async () => {
         const authentication = await TokenService.instance.getAuthentication();
-        const response = await RequestsService.get(
+        const response = await RequestsService.post(
             '/business/checklist/',
+          {established: !this.state.data[1].done},
             authentication,
         );
         await this.getChecklistData();

@@ -119,7 +119,7 @@ export class BusinessCredibility extends Component {
                 },
             },
             {
-                title: 'Step 1.3: Business entity',
+                title: 'Step 1.3: Business Entity',
                 done: false,
                 component: () => {
                     return (
