@@ -1,7 +1,7 @@
 import axios from 'axios';
 import TokenService from './TokenService';
-import {apiConfig} from '../config';
-import {userLogout} from '../store/user/Actions';
+import { apiConfig } from '../config';
+import { userLogout } from '../store/user/Actions';
 
 const RequestsService = axios.create({
     baseURL: `${apiConfig.baseUrl}`,
@@ -12,7 +12,7 @@ const getNewToken = async () => {
         const refresh = await TokenService.instance.getRefreshToken();
         const response = await RequestsService.post(
             apiConfig.tokenRefreshPath,
-            {refresh},
+            { refresh },
         );
         await TokenService.instance.storeAccessToken(response.data.access);
         return response.data.access;

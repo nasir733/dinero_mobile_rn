@@ -1,20 +1,20 @@
 import * as React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import {
     ExperianBusiness,
     DunnBradsheet,
     EquifixBussiness,
 } from '../../components/screens/BusinessCreditBureaus';
-import {stackNavHeader} from '../StackNavHeader';
+import { stackNavHeader } from '../StackNavHeader';
 
 const Stack = createStackNavigator();
 
 export const BusinessBuildingBureausStack = () => (
     <Stack.Navigator
         initialRouteName="ExperianBusiness"
-        screenOptions={{gestureEnabled: false}}>
+        screenOptions={{ gestureEnabled: false }}>
         <Stack.Screen
-            options={({navigation}) =>
+            options={({ navigation }) =>
                 stackNavHeader(
                     navigation,
                     'Getting Established With Business Experian',
@@ -24,7 +24,7 @@ export const BusinessBuildingBureausStack = () => (
             component={ExperianBusiness}
         />
         <Stack.Screen
-            options={({navigation}) =>
+            options={({ navigation }) =>
                 stackNavHeader(
                     navigation,
                     'Getting Established With Dunn & Bradstreet',
@@ -34,7 +34,7 @@ export const BusinessBuildingBureausStack = () => (
             component={DunnBradsheet}
         />
         <Stack.Screen
-            options={({navigation}) =>
+            options={({ navigation }) =>
                 stackNavHeader(
                     navigation,
                     'Establishing Your Business Equifax Account',

@@ -25,8 +25,8 @@ const appConfig = {
     appBackGround: require('./assets/dinero/background.png'),
     appLogo: require('./assets/dinero/logo.png'),
     drawerBackgroundColor: '#25313f',
-    appWebsite: 'https://www.getdinerotoday.com',
-    // appWebsite: 'http://127.0.0.1:8000',
+    // appWebsite: 'https://www.getdinerotoday.com',
+    appWebsite: 'http://127.0.0.1:8000',
     allowRegister: true,
 
     // appName: 'Get Moe Fit',

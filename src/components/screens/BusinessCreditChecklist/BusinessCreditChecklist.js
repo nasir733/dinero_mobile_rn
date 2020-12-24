@@ -1,22 +1,45 @@
-import React, {Component} from 'react';
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {Icon} from 'react-native-elements';
-import {goToLoggedView} from '../../../api/business';
+import React, { Component } from 'react';
+import {
+    FlatList,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
+} from 'react-native';
+import { Icon } from 'react-native-elements';
 import TokenService from '../../../services/TokenService';
 import RequestsService from '../../../services/RequestService';
+import { BusinessCredibility } from './BusinessCredibility';
+import { GettingEstablished } from './GettingEstablished';
 
 export class BusinessCreditChecklist extends Component {
+    markEstablished = async () => {
+        const authentication = await TokenService.instance.getAuthentication();
+        const response = await RequestsService.get(
+            '/business/checklist/',
+            authentication,
+        );
+        await this.getChecklistData();
+    };
+
     state = {
+        selected: null,
         data: [
             {
                 title: 'Step 1: Business Credibility',
                 done: false,
                 url: '/business/business_credibility_checklist/',
+                component: () => <BusinessCredibility />,
             },
             {
                 title: 'Step 2: Establish Business Reports',
                 done: false,
                 url: '/business/business_credibility_establish/',
+                component: () => (
+                    <GettingEstablished
+                        markEstablished={this.markEstablished}
+                    />
+                ),
             },
             {
                 title: 'Step 3: Start Building - Tier 1',
@@ -46,51 +69,76 @@ export class BusinessCreditChecklist extends Component {
         ],
     };
 
-    componentDidMount() {
-        const getChecklistData = async () => {
-            const authentication = await TokenService.instance.getAuthentication();
-            const response = await RequestsService.get(
-                '/business/checklist/',
-                authentication,
-            );
-            console.log(response.data);
-            const data = [...this.state.data];
-            data[0].done = response.data.steps_done;
-            data[1].done = response.data.othersteps.established;
-            data[2].done = response.data.othersteps.tier1;
-            data[3].done = response.data.othersteps.monitor;
-            data[4].done = response.data.othersteps.tier2;
-            data[5].done = response.data.othersteps.tier3;
-            data[6].done = response.data.othersteps.tier4;
-            this.setState({data});
-        };
-        getChecklistData();
+    getChecklistData = async () => {
+        const authentication = await TokenService.instance.getAuthentication();
+        const response = await RequestsService.get(
+            '/business/checklist/',
+            authentication,
+        );
+        console.log(response.data);
+        const data = [...this.state.data];
+        data[0].done = response.data.steps_done;
+        data[1].done = response.data.othersteps.established;
+        data[2].done = response.data.othersteps.tier1;
+        data[3].done = response.data.othersteps.monitor;
+        data[4].done = response.data.othersteps.tier2;
+        data[5].done = response.data.othersteps.tier3;
+        data[6].done = response.data.othersteps.tier4;
+
+        this.setState({ data });
+    };
+
+    async componentDidMount() {
+        await this.getChecklistData();
     }
+
+    async componentDidUpdate(
+        prevProps: Readonly<P>,
+        prevState: Readonly<S>,
+        snapshot: SS,
+    ) {
+        // await this.getChecklistData();
+    }
+
+    selectItem = (value) => {
+        if (this.state.selected === value) {
+            this.setState({ selected: null });
+        } else {
+            this.setState({ selected: value });
+        }
+    };
 
     renderItem = (item) => {
         return (
-            <View style={styles.item}>
-                <View style={styles.flexRow}>
-                    {item.item.done ? (
-                        <Icon name="done" color="green" />
-                    ) : (
-                        <Icon name="close" color="red" />
-                    )}
-                    <TouchableOpacity
-                        onPress={() => {
-                            goToLoggedView(item.item.url);
-                        }}>
-                        <Text style={styles.title}>{item.item.title}</Text>
-                    </TouchableOpacity>
+            <View>
+                <View style={styles.item}>
+                    <View style={styles.flexRow}>
+                        {item.item.done ? (
+                            <Icon name="done" color="green" />
+                        ) : (
+                            <Icon name="close" color="red" />
+                        )}
+                        <TouchableOpacity
+                            onPress={() => {
+                                this.selectItem(item.index);
+                            }}>
+                            <Text style={styles.title}>{item.item.title}</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                <View style={styles.subcategory}>
+                    {item.index === this.state.selected &&
+                        item.item.component &&
+                        item.item.component()}
                 </View>
             </View>
         );
     };
 
     render() {
-        const {navigation} = this.props;
+        const { navigation } = this.props;
         return (
-            <View style={styles.wrapper}>
+            <View style={styles.container}>
                 <FlatList
                     data={this.state.data}
                     renderItem={this.renderItem}
@@ -102,9 +150,12 @@ export class BusinessCreditChecklist extends Component {
 }
 
 const styles = StyleSheet.create({
+    subcategory: {
+        paddingLeft: 20,
+        backgroundColor: 'white',
+    },
     container: {
         flex: 1,
-        marginHorizontal: 16,
     },
     flexRow: {
         flexDirection: 'row',
@@ -120,7 +171,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         padding: 10,
-        marginVertical: 5,
+        marginBottom: 2,
     },
     tinyLogo: {
         width: 100,

@@ -1,7 +1,7 @@
 import appConfig from '../config';
 import TokenService from '../services/TokenService';
 import AsyncStorage from '@react-native-community/async-storage';
-import {Linking} from 'react-native';
+import { Linking } from 'react-native';
 import RequestsService from '../services/RequestService';
 
 export const getBusinessData = async (url) => {
@@ -24,7 +24,7 @@ export const getBusinessData = async (url) => {
 export const goToBusinessSteps = async () => {
     const user = await AsyncStorage.getItem('username');
     const pass = await AsyncStorage.getItem('password');
-    Linking.openURL(
+    await Linking.openURL(
         `${appConfig.appWebsite}/user/login_api?user=${user}&pass=${pass}&redirect=/business/business-credit-step/`,
     );
 };
@@ -32,9 +32,7 @@ export const goToBusinessSteps = async () => {
 export const goToLoggedView = async (url) => {
     const user = await AsyncStorage.getItem('username');
     const pass = await AsyncStorage.getItem('password');
-    console.log(user, pass);
-
-    Linking.openURL(
+    await Linking.openURL(
         `${appConfig.appWebsite}/user/login_api?user=${user}&pass=${pass}&redirect=${url}`,
     );
 };
