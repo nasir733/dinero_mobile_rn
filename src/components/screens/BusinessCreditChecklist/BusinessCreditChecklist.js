@@ -11,13 +11,14 @@ import TokenService from '../../../services/TokenService';
 import RequestsService from '../../../services/RequestService';
 import { BusinessCredibility } from './BusinessCredibility';
 import { GettingEstablished } from './GettingEstablished';
+import { goToLoggedView } from '../../../api/business';
 
 export class BusinessCreditChecklist extends Component {
     markEstablished = async () => {
         const authentication = await TokenService.instance.getAuthentication();
         const response = await RequestsService.post(
             '/business/checklist/',
-          {established: !this.state.data[1].done},
+            { established: !this.state.data[1].done },
             authentication,
         );
         await this.getChecklistData();
@@ -29,13 +30,11 @@ export class BusinessCreditChecklist extends Component {
             {
                 title: 'Step 1: Business Credibility',
                 done: false,
-                url: '/business/business_credibility_checklist/',
                 component: () => <BusinessCredibility />,
             },
             {
                 title: 'Step 2: Establish Business Reports',
                 done: false,
-                url: '/business/business_credibility_establish/',
                 component: () => (
                     <GettingEstablished
                         markEstablished={this.markEstablished}
@@ -64,7 +63,7 @@ export class BusinessCreditChecklist extends Component {
             },
             {
                 title: 'Step 7: Revolving Accounts - Tier 4',
-                done: true,
+                done: false,
                 url: '/business/business-credit-builder-tracker/',
             },
         ],
@@ -121,7 +120,11 @@ export class BusinessCreditChecklist extends Component {
                         )}
                         <TouchableOpacity
                             onPress={() => {
-                                this.selectItem(item.index);
+                                if (item.item.component) {
+                                    this.selectItem(item.index);
+                                } else {
+                                    goToLoggedView(item.item.url);
+                                }
                             }}>
                             <Text style={styles.title}>{item.item.title}</Text>
                         </TouchableOpacity>
