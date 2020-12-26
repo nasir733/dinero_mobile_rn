@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import NavigationTabBar from './NavigationTabBar';
-import {SideBar} from '../components/general/SideBar';
+import { SideBar } from '../components/general/SideBar';
 import {
     ApplyForLoansStack,
     BusinessBuildingBureausStack,
@@ -22,6 +22,8 @@ import {
     ProgressStack,
     UpgradeBusinessStack,
 } from './AppStacks';
+import { BusinessCreditBuilderTracker } from '../components/screens/BusinessCreditChecklist/BusinessCreditBuilderTracker';
+import { BusinessCreditTrackerStack } from './AppStacks/BusinessCreditTrackerStack';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -58,6 +60,10 @@ const DrawerNavigator = () => {
             <Drawer.Screen
                 name="CorporateCreditListStack"
                 component={CorporateCreditListStack}
+            />
+            <Drawer.Screen
+                name="BusinessCreditTrackerStack"
+                component={BusinessCreditTrackerStack}
             />
             <Drawer.Screen
                 name="FullListOfFinancingProductsStack"

@@ -15,11 +15,11 @@ import {
     getTradelinesData,
     getUserData,
 } from '../../../api/userData';
-import {userLogout} from '../../../store/user/Actions';
-import {connect} from 'react-redux';
-import {goToBusinessSteps} from '../../../api/business';
+import { userLogout } from '../../../store/user/Actions';
+import { connect } from 'react-redux';
+import { goToBusinessSteps } from '../../../api/business';
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 class Profile extends React.Component {
     state = {
@@ -39,7 +39,7 @@ class Profile extends React.Component {
         getUserData()
             .then((data) => {
                 if (data) {
-                    this.setState({...this.state, ...data});
+                    this.setState({ ...this.state, ...data });
                 }
             })
             .catch((err) => console.log(err));
@@ -47,7 +47,7 @@ class Profile extends React.Component {
         getStepsData()
             .then((data) => {
                 if (data.stepsData) {
-                    this.setState({...this.state, stepsData: data.stepsData});
+                    this.setState({ ...this.state, stepsData: data.stepsData });
                 }
             })
             .catch((err) => console.log(err));
@@ -55,7 +55,8 @@ class Profile extends React.Component {
         getTradelinesData()
             .then((data) => {
                 if (data) {
-                    this.setState({...this.state, tradelines: data});
+                    this.setState({ ...this.state, tradelines: data });
+                    console.log(data);
                 }
             })
             .catch((err) => console.log(err));
@@ -273,7 +274,7 @@ class Profile extends React.Component {
                         Services Information:
                     </Text>
                 </View>
-                <View style={{width: '100%'}}>
+                <View style={{ width: '100%' }}>
                     {Object.entries(this.state.stepsData).map(
                         ([key, value], index) => {
                             if (value) {
@@ -342,14 +343,14 @@ class Profile extends React.Component {
     renderProfileInformation = () => {
         return (
             <>
-                <View style={{height: 100, backgroundColor: '#4456ca'}} />
+                <View style={{ height: 100, backgroundColor: '#4456ca' }} />
                 <View
                     style={{
                         flexDirection: 'row',
                         alignItems: 'center',
                         marginTop: -45,
                         marginHorizontal: 20,
-                        shadowOffset: {width: 0, height: 2},
+                        shadowOffset: { width: 0, height: 2 },
                         shadowOpacity: 0.3,
                         shadowRadius: 5,
                         borderRadius: 5,
@@ -358,8 +359,8 @@ class Profile extends React.Component {
                         paddingHorizontal: 20,
                         paddingVertical: 15,
                     }}>
-                    <View style={{paddingHorizontal: 10}}>
-                        <Text style={{fontSize: 16, color: '#272b43'}}>
+                    <View style={{ paddingHorizontal: 10 }}>
+                        <Text style={{ fontSize: 16, color: '#272b43' }}>
                             {this.state.firstName} {this.state.lastName}
                         </Text>
                         <Text
@@ -389,7 +390,6 @@ class Profile extends React.Component {
                         flexDirection: 'row',
                         justifyContent: 'space-between',
                     }}>
-                    <Text>Name</Text>
                     <Text>Product</Text>
                     <Text>Price</Text>
                 </View>
@@ -411,8 +411,9 @@ class Profile extends React.Component {
                                     flexDirection: 'row',
                                     justifyContent: 'space-between',
                                 }}>
-                                <Text>{item.name}</Text>
-                                <Text>{item.product}</Text>
+                                <Text>
+                                    {item.company_name} {item.product}
+                                </Text>
                                 <Text>${item.price + item.charge}</Text>
                             </View>
                         );
@@ -426,7 +427,7 @@ class Profile extends React.Component {
 
     render() {
         return (
-            <View style={{flex: 1, backgroundColor: '#f1f5f7'}}>
+            <View style={{ flex: 1, backgroundColor: '#f1f5f7' }}>
                 {this.renderProfileInformation()}
                 <View
                     style={{
@@ -476,7 +477,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 20,
         marginHorizontal: 20,
-        shadowOffset: {width: 0, height: 2},
+        shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.3,
         shadowRadius: 5,
         borderRadius: 5,
@@ -486,7 +487,7 @@ const styles = StyleSheet.create({
         paddingVertical: 15,
         marginTop: 10,
     },
-    cardTitle: {flex: 2, fontSize: 14, fontWeight: 'bold', color: '#4456ca'},
+    cardTitle: { flex: 2, fontSize: 14, fontWeight: 'bold', color: '#4456ca' },
     cardTitleContainer: {
         width: '100%',
         marginVertical: 10,

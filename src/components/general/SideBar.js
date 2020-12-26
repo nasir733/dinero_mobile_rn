@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     Image,
     Linking,
@@ -7,9 +7,9 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
-import {goToBusinessSteps, goToLoggedView} from '../../api/business';
-import appConfig, {getSubdomain} from '../../config';
-import {getWhiteLabelLogo} from '../../api/userData';
+import { goToBusinessSteps, goToLoggedView } from '../../api/business';
+import appConfig, { getSubdomain } from '../../config';
+import { getWhiteLabelLogo } from '../../api/userData';
 
 const MENU_ITEM = [
     {
@@ -17,11 +17,16 @@ const MENU_ITEM = [
         title: 'How Our App Can Help Your Business',
         route: 'WalkThrough',
     },
-    {id: '1', title: 'Profile', route: 'Profile'},
+    { id: '1', title: 'Profile', route: 'Profile' },
     {
         id: '2',
         title: 'Business Credit Checklist',
         route: 'BusinessCreditChecklist',
+    },
+    {
+        id: '3',
+        title: 'Business Credit Builder Tracker',
+        route: 'BusinessCreditTrackerStack',
     },
     // { id: '2', title: 'Upgrade To Full Business Builder Program With No Money Down', route: "UpgradeBusinessStack" },
 
@@ -46,9 +51,9 @@ const MENU_ITEM = [
         id: '6',
         title: 'Business Credit Building',
         options: [
-            {name: 'Business Entity', screen: 'BusinessEntity'},
-            {name: 'EIN Number', screen: 'EINNumber'},
-            {name: 'Business License', screen: 'BusinessLicenses'},
+            { name: 'Business Entity', screen: 'BusinessEntity' },
+            { name: 'EIN Number', screen: 'EINNumber' },
+            { name: 'Business License', screen: 'BusinessLicenses' },
             {
                 name: 'Website Creation',
                 screen: 'WebsiteCreation',
@@ -63,7 +68,7 @@ const MENU_ITEM = [
                     goToLoggedView('/business/fax-number/');
                 },
             },
-            {name: '411 Listings', screen: 'FourElevenListing'},
+            { name: '411 Listings', screen: 'FourElevenListing' },
             {
                 name: 'Professional Email Address',
                 screen: 'ProfessionalEmailAddress',
@@ -85,11 +90,11 @@ const MENU_ITEM = [
                     goToLoggedView('/business/toll-free-options/');
                 },
             },
-            {name: 'Virtual Address', screen: 'VirtualAddress'},
-            {name: 'Business Bank Account', screen: 'BusinessBankAccount'},
-            {name: 'Merchant Account', screen: 'MerchantAccount'},
-            {name: 'Duns Number', screen: 'DunsNumber'},
-            {name: 'SIC & NAICS Codes', screen: 'SICCode'},
+            { name: 'Virtual Address', screen: 'VirtualAddress' },
+            { name: 'Business Bank Account', screen: 'BusinessBankAccount' },
+            { name: 'Merchant Account', screen: 'MerchantAccount' },
+            { name: 'Duns Number', screen: 'DunsNumber' },
+            { name: 'SIC & NAICS Codes', screen: 'SICCode' },
             {
                 name: 'How To Check If Your Business Is In Good Standing',
                 screen: 'BusinessStanding',
@@ -110,9 +115,9 @@ const MENU_ITEM = [
         id: '8',
         title: 'Business Credit Bureaus',
         options: [
-            {name: 'Experian Business', screen: 'ExperianBusiness'},
-            {name: 'Dunn & Bradstreet', screen: 'DunnBradsheet'},
-            {name: 'Equifax', screen: 'EquifixBussiness'},
+            { name: 'Experian Business', screen: 'ExperianBusiness' },
+            { name: 'Dunn & Bradstreet', screen: 'DunnBradsheet' },
+            { name: 'Equifax', screen: 'EquifixBussiness' },
         ],
         route: 'BusinessBuildingBureausStack',
     },
@@ -120,8 +125,11 @@ const MENU_ITEM = [
         id: '9',
         title: 'Corporate Credit List',
         options: [
-            {name: 'Starter vendor list', screen: 'StarterVendorList'},
-            {name: 'Store credit vendor list', screen: 'StoreCreditVendorList'},
+            { name: 'Starter vendor list', screen: 'StarterVendorList' },
+            {
+                name: 'Store credit vendor list',
+                screen: 'StoreCreditVendorList',
+            },
             {
                 name: 'Revolving business credit vendor list',
                 screen: 'RevolvingBusinessCreditVendorList',
@@ -137,20 +145,23 @@ const MENU_ITEM = [
         id: '10',
         title: 'Full List Of Financing Products',
         options: [
-            {name: 'Personal Credit Cards', screen: 'PersonalCreditCards'},
-            {name: 'Business Credit Cards', screen: 'BusinessCreditCards'},
-            {name: 'Short Term Loans', screen: 'ShortTermLoans'},
-            {name: 'Business Term Loans', screen: 'BusinessTermLoans'},
+            { name: 'Personal Credit Cards', screen: 'PersonalCreditCards' },
+            { name: 'Business Credit Cards', screen: 'BusinessCreditCards' },
+            { name: 'Short Term Loans', screen: 'ShortTermLoans' },
+            { name: 'Business Term Loans', screen: 'BusinessTermLoans' },
             {
                 name: 'Small Business Administration Loans',
                 screen: 'SmallBusinessAdministrationLoans',
             },
-            {name: 'Personal Loans', screen: 'PersonalLoans'},
-            {name: 'Business Lines Of Credit', screen: 'BusinessLinesOfCredit'},
-            {name: 'No Credit Check Loans', screen: 'NoCreditCheckLoans'},
-            {name: 'Invoice Factoring', screen: 'InvoiceFactoring'},
-            {name: 'Invoice Financing', screen: 'InvoiceFinancing'},
-            {name: 'Equipment Financing', screen: 'EquipmentFinancing'},
+            { name: 'Personal Loans', screen: 'PersonalLoans' },
+            {
+                name: 'Business Lines Of Credit',
+                screen: 'BusinessLinesOfCredit',
+            },
+            { name: 'No Credit Check Loans', screen: 'NoCreditCheckLoans' },
+            { name: 'Invoice Factoring', screen: 'InvoiceFactoring' },
+            { name: 'Invoice Financing', screen: 'InvoiceFinancing' },
+            { name: 'Equipment Financing', screen: 'EquipmentFinancing' },
         ],
         route: 'FullListOfFinancingProductsStack',
     },
@@ -181,6 +192,13 @@ const MENU_ITEM = [
         title: 'Personal Credit Repair Done For You Services',
         route: 'PersonalCreditRepairDoneServicesStack',
     },
+    {
+        id: '16',
+        title: 'Shop At Our Online Store',
+        action: () => {
+            Linking.openURL('https://getdinerotodaystore.com/');
+        },
+    },
     // { id: '15', title: 'Apply For Business Loans', action: () => { Linking.openURL("https://www.getdinerotoday.com/business/apply-loans") } },
     // { id: '15', title: 'Apply For Business Loans', route: "ApplyForLoansStack" },
     // { id: '16', title: 'Covid-19 Business Loan Section', action: () => { Linking.openURL("https://www.getdinerotoday.com/covid19/homeone") } },
@@ -205,7 +223,7 @@ class SideBar extends Component {
         shouldUpdateLogo: false,
     };
 
-    _handleSelect = ({id, route}) =>
+    _handleSelect = ({ id, route }) =>
         this.setState(
             {
                 selected: id,
@@ -241,7 +259,7 @@ class SideBar extends Component {
     }
 
     renderItem = (item, key) => {
-        const {selected, dropdown} = this.state;
+        const { selected, dropdown } = this.state;
 
         if (item.options && item.options.length) {
             return (
@@ -273,7 +291,7 @@ class SideBar extends Component {
                                         dropdown === item.id ? null : item.id,
                                 })
                             }
-                            style={{paddingTop: 10}}>
+                            style={{ paddingTop: 10 }}>
                             <Image
                                 source={require('../../assets/icon/ic_expand.png')}
                                 style={{
@@ -322,7 +340,7 @@ class SideBar extends Component {
             );
         } else if (item.action) {
             return (
-                <View style={{paddingLeft: 20}} key={key}>
+                <View style={{ paddingLeft: 20 }} key={key}>
                     <ItemMenu
                         id={item.id}
                         title={item.title}
@@ -333,7 +351,7 @@ class SideBar extends Component {
             );
         } else {
             return (
-                <View style={{paddingLeft: 20}} key={key}>
+                <View style={{ paddingLeft: 20 }} key={key}>
                     <ItemMenu
                         id={item.id}
                         title={item.title}
@@ -366,7 +384,7 @@ class SideBar extends Component {
                     }}>
                     {appConfig.whitelabel && this.state.shouldUpdateLogo ? (
                         <Image
-                            source={{uri: this.state.logo}}
+                            source={{ uri: this.state.logo }}
                             style={{
                                 height: 100,
                                 width: 200,
@@ -399,13 +417,13 @@ class SideBar extends Component {
     }
 }
 
-function ItemMenu({title, selected, onSelect}) {
+function ItemMenu({ title, selected, onSelect }) {
     return (
         <TouchableOpacity
             onPress={() => {
                 onSelect && onSelect();
             }}
-            style={{padding: 15}}>
+            style={{ padding: 15 }}>
             <Text
                 style={{
                     fontSize: 14,
@@ -419,4 +437,4 @@ function ItemMenu({title, selected, onSelect}) {
     );
 }
 
-export {SideBar};
+export { SideBar };

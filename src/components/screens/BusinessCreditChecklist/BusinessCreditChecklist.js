@@ -12,6 +12,7 @@ import RequestsService from '../../../services/RequestService';
 import { BusinessCredibility } from './BusinessCredibility';
 import { GettingEstablished } from './GettingEstablished';
 import { goToLoggedView } from '../../../api/business';
+import { navigate } from '../../../services/NavigationService';
 
 export class BusinessCreditChecklist extends Component {
     markEstablished = async () => {
@@ -44,7 +45,9 @@ export class BusinessCreditChecklist extends Component {
             {
                 title: 'Step 3: Start Building - Tier 1',
                 done: false,
-                url: '/business/business-credit-builder-tracker/',
+                component: () => {
+                    navigate('BusinessCreditBuilderTracker');
+                },
             },
             {
                 title: 'Step 4: Monitor Business Reports',
@@ -54,17 +57,23 @@ export class BusinessCreditChecklist extends Component {
             {
                 title: 'Step 5: Building Credit - Tier 2',
                 done: false,
-                url: '/business/business-credit-builder-tracker/',
+                component: () => {
+                    navigate('BusinessCreditBuilderTracker');
+                },
             },
             {
                 title: 'Step 6: Advanced Building - Tier 3',
                 done: false,
-                url: '/business/business-credit-builder-tracker/',
+                component: () => {
+                    navigate('BusinessCreditBuilderTracker');
+                },
             },
             {
                 title: 'Step 7: Revolving Accounts - Tier 4',
                 done: false,
-                url: '/business/business-credit-builder-tracker/',
+                component: () => {
+                    navigate('BusinessCreditBuilderTracker');
+                },
             },
         ],
     };
