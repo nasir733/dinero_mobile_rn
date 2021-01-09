@@ -1,54 +1,79 @@
-const appMeta = {
-    varsion: '1.5',
-    build: 15,
-};
-
-export const getSubdomain = (domain) => {
-    const website = appConfig.appWebsite;
-    return website.replace('www', domain);
-};
-
 const appConfig = {
-    phoneNumber: '1234',
-    webinarLink: 'https://www.youtube.com/watch?v=xNCfnbGT5hY',
+    // appWebsite: 'http://127.0.0.1:8000',
 
-    // whitelabel: true,
+    // com.millennialbusiness.businesscreditbuilders
     // appName: 'Business Credit Builders',
-    // appDomain: 'getdinerotoday',
+    // whitelabel: true,
+    // webinarLink: 'https://www.youtube.com/watch?v=xNCfnbGT5hY',
     // appWebsite: 'https://businesscreditbuilders.getdinerotoday.com',
-    // allowRegister: true,
     // appLogo: require('./assets/dinero/whitelabel/logotrans.png'),
+    // allowRegister: true,
+    // showWebinar: true,
 
-    whitelabel: false,
+    // com.millennialbusiness.getdinerotodayapp
     appName: 'Get Dinero Today',
-    appDomain: 'getdinerotoday',
+    whitelabel: false,
+    webinarLink: 'https://www.youtube.com/watch?v=61P3fl9GEiw',
+    appWebsite: 'https://www.getdinerotoday.com',
     appBackGround: require('./assets/dinero/background.png'),
     appLogo: require('./assets/dinero/logo.png'),
     drawerBackgroundColor: '#25313f',
     showWebinar: true,
-    // appWebsite: 'https://www.getdinerotoday.com',
-    appWebsite: 'http://127.0.0.1:8000',
     allowRegister: true,
 
+    // com.millennialbusiness.moefit
     // appName: 'Get Moe Fit',
-    // appName: 'Business Builders MF',
-    // appDomain: 'getmoefitbusinessbuilders',
+    // whitelabel: false,
     // appLogo: require('./assets/dinero/moefit/logo1.png'),
+    // webinarLink: 'https://www.youtube.com/watch?v=61P3fl9GEiw',
     // drawerBackgroundColor: '#25313f',
     // appWebsite: 'https://www.getmoefitbusinessbuilders.com',
     // allowRegister: true,
+    // showWebinar: true,
 
+    // com.millennialbusiness.moefitbb
+    // appName: 'Business Builders MF',
+    // whitelabel: true,
+    // webinarLink: 'https://www.youtube.com/watch?v=xNCfnbGT5hY',
+    // appLogo: require('./assets/dinero/whitelabel/logotrans.png'),
+    // appWebsite: 'https://businesscreditbuilders.getmoefitbusinessbuilders.com',
+    // allowRegister: true,
+    // showWebinar: true,
+
+    // com.millennialbusiness.honeywl
+    // appName: 'Business Builders PH',
+    // whitelabel: true,
+    // appLogo: require('./assets/dinero/whitelabel/logotrans.png'),
+    // webinarLink: 'https://www.youtube.com/watch?v=xNCfnbGT5hY',
+    // appWebsite:
+    //     'https://businesscreditbuilders.honeyprofessorbusinessbuilders.com',
+    // allowRegister: true,
+    // showWebinar: true,
+
+    // com.millennialbusiness.honey
     // appName: 'Professor Honeys Credit and Lending',
-    // appName: 'Business Builders PH',s
+    // whitelabel: false,
+    // webinarLink: 'https://www.youtube.com/watch?v=61P3fl9GEiw',
     // appLogo: require('./assets/dinero/whitelabel/honey.png'),
-    // appDomain: 'honeyprofessorbusinessbuilders',
     // appWebsite: 'https://www.honeyprofessorbusinessbuilders.com',
     // allowRegister: true,
+    // showWebinar: true,
 
-    // appName: 'Holliday Consulting',
+    // com.millennialbusiness.hollidayconsultingbb
     // appName: 'Business Builders HC',
+    // whitelabel: true,
+    // appLogo: require('./assets/dinero/whitelabel/logotrans.png'),
+    // webinarLink: 'https://www.youtube.com/watch?v=xNCfnbGT5hY',
+    // appWebsite:
+    //     'https://businesscreditbuilders.hollidayconsultingbusinessbuilders.com',
+    // allowRegister: false,
+    // showWebinar: false,
+
+    // com.millennialbusiness.hollidayconsulting
+    // appName: 'Holliday Consulting',
+    // whitelabel: false,
     // appLogo: require('./assets/dinero/hlogo.png'),
-    // appDomain: 'hollidayconsultingbusinessbuilders',
+    // webinarLink: 'https://www.youtube.com/watch?v=61P3fl9GEiw',
     // appWebsite: 'https://www.hollidayconsultingbusinessbuilders.com',
     // allowRegister: false,
     // showWebinar: false,
@@ -58,9 +83,14 @@ const appConfig = {
 
     // appName: 'Saw Corporation',
     // appLogo: require('./assets/dinero/sawlogo.png'),
-    // appDomain: 'sawcorporationbusinessbuilders',
     // appWebsite: 'https://www.sawcorporationbusinessbuilders.com',
     // allowRegister: true,
+    // showWebinar: true,
+};
+
+export const getSubdomain = (domain) => {
+    const website = appConfig.appWebsite;
+    return website.replace('www', domain);
 };
 
 export const apiConfig = {
