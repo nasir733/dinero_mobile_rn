@@ -767,7 +767,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 76E783673B5F73CA320DC4FC /* Pods-dinero_mobile_rn.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = HollidayBlack;
+				ASSETCATALOG_COMPILER_APPICON_NAME = BusinessCreditBuilders;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = FR4X5WB4QZ;
@@ -780,7 +780,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.millennialbusiness.hollidayconsulting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.millennialbusiness.bcabb;
 				PRODUCT_NAME = dinero_mobile_rn;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -792,7 +792,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 77452D9ABB683A0CEA190B59 /* Pods-dinero_mobile_rn.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = HollidayBlack;
+				ASSETCATALOG_COMPILER_APPICON_NAME = BusinessCreditBuilders;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = FR4X5WB4QZ;
@@ -804,7 +804,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.millennialbusiness.hollidayconsulting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.millennialbusiness.bcabb;
 				PRODUCT_NAME = dinero_mobile_rn;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

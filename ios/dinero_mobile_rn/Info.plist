@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Holliday Consulting</string>
+	<string>Business Builders BCA</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -38,11 +38,11 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>App uses camera for better user experience.</string>
+	<string>Our app needs permission read files in order to give the best chances for our clients to qualify for a business loan to improve the cash flow needs for their business.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>App requires user’s location for better user experience.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Uses app to improve user experience.</string>
+	<string>Microphone is required to use voice assistant</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Our app needs permission read files in order to give the best chances for our clients to qualify for a business loan to improve the cash flow needs for their business.</string>
 	<key>UIAppFonts</key>
