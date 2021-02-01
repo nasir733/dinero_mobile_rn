@@ -767,20 +767,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 76E783673B5F73CA320DC4FC /* Pods-dinero_mobile_rn.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = BusinessCreditBuilders;
+				ASSETCATALOG_COMPILER_APPICON_NAME = ProfessorHoney;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = FR4X5WB4QZ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = dinero_mobile_rn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7.3;
+				MARKETING_VERSION = 1.7.4;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.millennialbusiness.bcabb;
+				PRODUCT_BUNDLE_IDENTIFIER = com.millennialbusiness.honeycredit;
 				PRODUCT_NAME = dinero_mobile_rn;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -792,19 +792,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 77452D9ABB683A0CEA190B59 /* Pods-dinero_mobile_rn.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = BusinessCreditBuilders;
+				ASSETCATALOG_COMPILER_APPICON_NAME = ProfessorHoney;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = FR4X5WB4QZ;
 				INFOPLIST_FILE = dinero_mobile_rn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7.3;
+				MARKETING_VERSION = 1.7.4;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.millennialbusiness.bcabb;
+				PRODUCT_BUNDLE_IDENTIFIER = com.millennialbusiness.honeycredit;
 				PRODUCT_NAME = dinero_mobile_rn;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

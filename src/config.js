@@ -40,7 +40,7 @@ const appConfig = {
     // allowRegister: true,
     // showWebinar: true,
 
-    // com.millennialbusiness.honeywl
+    // com.millennialbusiness.honeycreditbb
     // appName: 'Business Builders PH',
     // whitelabel: true,
     // appLogo: require('./assets/dinero/whitelabel/logotrans.png'),
@@ -50,7 +50,7 @@ const appConfig = {
     // allowRegister: true,
     // showWebinar: true,
 
-    // com.millennialbusiness.honey
+    // com.millennialbusiness.honeycredit
     // appName: 'Professor Honeys Credit and Lending',
     // whitelabel: false,
     // webinarLink: 'https://www.youtube.com/watch?v=61P3fl9GEiw',
@@ -82,25 +82,25 @@ const appConfig = {
     // appBackGroundColor: '#eeeeee',
 
     // com.millennialbusiness.bcabb
-    // appName: 'Business Builders BCA',
-    // whitelabel: true,
-    // appLogo: require('./assets/dinero/whitelabel/logotrans.png'),
-    // webinarLink: 'https://www.youtube.com/watch?v=xNCfnbGT5hY',
-    // appWebsite: 'https://businesscreditbuilders.businesscreditautomation.com',
-    // allowRegister: false,
-    // showWebinar: false,
+    appName: 'Business Builders BCA',
+    whitelabel: true,
+    appLogo: require('./assets/dinero/whitelabel/logotrans.png'),
+    webinarLink: 'https://www.youtube.com/watch?v=xNCfnbGT5hY',
+    appWebsite: 'https://businesscreditbuilders.businesscreditautomation.com',
+    allowRegister: false,
+    showWebinar: false,
 
     // com.millennialbusiness.bca
-    appName: 'Business Credit Automation',
-    whitelabel: false,
-    appLogo: require('./assets/dinero/whitelabel/bsa.png'),
-    webinarLink: 'https://www.youtube.com/watch?v=61P3fl9GEiw',
-    appWebsite: 'https://www.businesscreditautomation.com',
-    allowRegister: true,
-    showWebinar: false,
-    appBackGround: null,
-    drawerBackgroundColor: '#191919',
-    appBackGroundColor: '#eeeeee',
+    // appName: 'Business Credit Automation',
+    // whitelabel: false,
+    // appLogo: require('./assets/dinero/whitelabel/bsa.png'),
+    // webinarLink: 'https://www.youtube.com/watch?v=61P3fl9GEiw',
+    // appWebsite: 'https://www.businesscreditautomation.com',
+    // allowRegister: true,
+    // showWebinar: false,
+    // appBackGround: null,
+    // drawerBackgroundColor: '#191919',
+    // appBackGroundColor: '#eeeeee',
 };
 
 export const getSubdomain = (domain) => {

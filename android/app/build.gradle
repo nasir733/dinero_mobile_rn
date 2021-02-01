@@ -134,7 +134,11 @@ android {
            pickFirst 'lib/armeabi-v7a/libc++_shared.so'
        }
     defaultConfig {
-        applicationId "com.millennialbusinessbuilders.hollidayconsulting"
+//         applicationId "com.millennialbusinessbuilders.hollidayconsulting"
+//         applicationId "com.millennialbusinessbuilders.honeybb"
+//         applicationId "com.millennialbusinessbuilders.honey"
+//         applicationId "com.millennialbusiness.bca"
+        applicationId "com.millennialbusiness.bcabb"
 //         applicationId "com.millennialbusinessbuilders.businessbuildershc"
 //         applicationId "com.millennialbusinessbuilders.getdianotoday"
 //         applicationId "com.millennialbusinessbuilders.businesscreditbuilders"
@@ -174,7 +178,7 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
