@@ -11,15 +11,24 @@ const appConfig = {
     // showWebinar: true,
 
     // com.millennialbusiness.getdinerotodayapp
-    // appName: 'Get Dinero Today',
+    // appName: 'Fannie Mae',
     // whitelabel: false,
     // webinarLink: 'https://www.youtube.com/watch?v=61P3fl9GEiw',
-    // appWebsite: 'https://www.getdinerotoday.com',
-    // appBackGround: require('./assets/dinero/background.png'),
-    // appLogo: require('./assets/dinero/logo.png'),
-    // drawerBackgroundColor: '#25313f',
+    // appWebsite: 'https://fanniemae.herokuapp.com',
+    // appLogo: require('./assets/dinero/whitelabel/fannie-mae-logo.png'),
+    // drawerBackgroundColor: '#ffffff',
     // showWebinar: true,
     // allowRegister: true,
+
+    // com.millennialbusiness.kleui
+    appName: 'Kleui',
+    whitelabel: false,
+    webinarLink: 'https://www.youtube.com/watch?v=61P3fl9GEiw',
+    appWebsite: 'https://www.kleui.com',
+    appLogo: require('./assets/dinero/kleui.png'),
+    drawerBackgroundColor: '#25313f',
+    showWebinar: true,
+    allowRegister: true,
 
     // com.millennialbusiness.moefit
     // appName: 'Get Moe Fit',
@@ -82,13 +91,13 @@ const appConfig = {
     // appBackGroundColor: '#eeeeee',
 
     // com.millennialbusiness.bcabb
-    appName: 'Business Builders BCA',
-    whitelabel: true,
-    appLogo: require('./assets/dinero/whitelabel/logotrans.png'),
-    webinarLink: 'https://www.youtube.com/watch?v=xNCfnbGT5hY',
-    appWebsite: 'https://businesscreditbuilders.businesscreditautomation.com',
-    allowRegister: false,
-    showWebinar: false,
+    // appName: 'Business Builders BCA',
+    // whitelabel: true,
+    // appLogo: require('./assets/dinero/whitelabel/logotrans.png'),
+    // webinarLink: 'https://www.youtube.com/watch?v=xNCfnbGT5hY',
+    // appWebsite: 'https://businesscreditbuilders.businesscreditautomation.com',
+    // allowRegister: false,
+    // showWebinar: false,
 
     // com.millennialbusiness.bca
     // appName: 'Business Credit Automation',
