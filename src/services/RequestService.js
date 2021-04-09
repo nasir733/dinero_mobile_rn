@@ -5,6 +5,10 @@ import { userLogout } from '../store/user/Actions';
 
 const RequestsService = axios.create({
     baseURL: `${apiConfig.baseUrl}`,
+    headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+    },
 });
 
 const getNewToken = async () => {
@@ -27,6 +31,8 @@ RequestsService.interceptors.response.use(
         return response;
     },
     (error) => {
+        throw error;
+
         if (error.response && error.response.status !== 401) {
             console.log(
                 `[API - ERROR ${error.response.status}] ${error.config.url}`,

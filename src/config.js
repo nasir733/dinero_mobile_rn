@@ -24,7 +24,7 @@ const appConfig = {
     appName: 'Kleui',
     whitelabel: false,
     webinarLink: 'https://www.youtube.com/watch?v=61P3fl9GEiw',
-    appWebsite: 'https://www.kleui.com',
+    appWebsite: 'http://www.kleui.com',
     appLogo: require('./assets/dinero/kleui.png'),
     drawerBackgroundColor: '#25313f',
     showWebinar: true,
