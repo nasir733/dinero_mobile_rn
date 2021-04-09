@@ -1,4 +1,4 @@
-package com.dinero_mobile_rn;
+package com.millenialbusiness.kleui;
 
 import com.facebook.react.ReactActivity;
 

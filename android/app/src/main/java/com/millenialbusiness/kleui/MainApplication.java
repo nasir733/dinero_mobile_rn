@@ -1,4 +1,4 @@
-package com.dinero_mobile_rn;
+package com.millenialbusiness.kleui;
 
 import android.app.Application;
 import android.content.Context;
