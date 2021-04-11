@@ -31,8 +31,6 @@ RequestsService.interceptors.response.use(
         return response;
     },
     (error) => {
-        throw error;
-
         if (error.response && error.response.status !== 401) {
             console.log(
                 `[API - ERROR ${error.response.status}] ${error.config.url}`,
