@@ -21,10 +21,10 @@ const appConfig = {
     // allowRegister: true,
 
     // com.millennialbusiness.kleui
-    appName: 'Kleui',
+    appName: 'Neru Lending',
     whitelabel: false,
     webinarLink: 'https://www.youtube.com/watch?v=61P3fl9GEiw',
-    appWebsite: 'https://www.kleui.com',
+    appWebsite: 'https://www.nerulending.com',
     appLogo: require('./assets/dinero/kleui.png'),
     drawerBackgroundColor: '#25313f',
     showWebinar: true,
