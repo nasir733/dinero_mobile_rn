@@ -769,18 +769,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = kleui;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FR4X5WB4QZ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = dinero_mobile_rn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7.8;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.millennialbusiness.kleui;
+				PRODUCT_BUNDLE_IDENTIFIER = com.millennialbusiness.nerulending;
 				PRODUCT_NAME = dinero_mobile_rn;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -794,17 +794,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = kleui;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FR4X5WB4QZ;
 				INFOPLIST_FILE = dinero_mobile_rn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7.8;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.millennialbusiness.kleui;
+				PRODUCT_BUNDLE_IDENTIFIER = com.millennialbusiness.nerulending;
 				PRODUCT_NAME = dinero_mobile_rn;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
